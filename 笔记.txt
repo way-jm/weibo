@@ -21,3 +21,21 @@ router.get('/loadmore/:username/:pageindex', async (ctx, next) => {
      password
    }
  })
+
+3.ejs 模板  如果不确定传不传，可以使用locals
+  await ctx.render('index', {
+    title: 'Hello Koa 2!',
+    msg:'123'  //--->变量
+  })
+
+  if判断
+    <body>
+      <h1><%= title %></h1>
+      <p>EJS Welcome to <%= title %></p>
+      <p><%= locals.msg %></p>
+      <% if(isMe) { %>
+       <a>aaaa</a>
+      <% } else { %>
+      <button>ddd</button>
+     <%}%>
+    </body>

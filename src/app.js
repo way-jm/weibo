@@ -21,7 +21,7 @@ app.use(logger())
 // 静态化，通过目录的方式访问
 app.use(require('koa-static')(__dirname + '/public'))
 
-app.use(views(__dirname + '/views', {
+app.use(views(__dirname + '/../views', {
   extension: 'ejs'
 }))
 
