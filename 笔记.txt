@@ -3,3 +3,21 @@
   koa2 -e app  //-e表示带ejs模板
 
 
+2.路由--动态参数
+router.get('/loadmore/:username/:pageindex', async (ctx, next) => {
+  const {username,pageindex} = ctx.params;
+  ctx.body = {
+    title: 'this is loadmore page',
+    username,
+    pageindex
+  }
+})
+
+ post 请求
+ router.post('/login',async (ctx,next)=>{
+   const{username,password}= ctx.request.body;
+   ctx.body = {
+     username,
+     password
+   }
+ })
