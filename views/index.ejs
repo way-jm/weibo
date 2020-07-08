@@ -8,10 +8,8 @@
     <h1><%= title %></h1>
     <p>EJS Welcome to <%= title %></p>
     <p><%= locals.msg %></p>
-    <% if(isMe) { %>
-     <a>aaaa</a>
-    <% } else { %>
-    <button>ddd</button>
-   <%}%>
+    <%- include('widgets/userinfo', {
+      isMe
+    })%>
   </body>
 </html>

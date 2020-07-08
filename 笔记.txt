@@ -39,3 +39,32 @@ router.get('/loadmore/:username/:pageindex', async (ctx, next) => {
       <button>ddd</button>
      <%}%>
     </body>
+
+  组件化
+<div>
+    <% if(isMe) { %>
+        <a>aaaa</a>
+    <% } else { %>
+        <button>ddd</button>
+    <%}%>
+</div>
+
+
+使用组件
+<%- include('widgets/userinfo', {
+      isMe
+    })%>
+
+ 遍历
+ <ul>
+   <% users.forEach(user=>{ %>
+     <%- include('user/show', {user: user}); %>
+   <% }); %>
+ </ul>
+
+
+4.mysql 外键约束
+  插入和删除同步更新CASCADE
+
+5.sequelize orm工具  对象关系映射
+
